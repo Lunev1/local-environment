@@ -1,0 +1,5 @@
+version: '3.8'
+services:
+  # import spring-boot demo service
+  # import official redis service
+  # configure network settings so service can communicate with redis
