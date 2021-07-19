@@ -1,14 +1,20 @@
 version: '3.8'
 services:
   ### demo service
-#  demo-service-dc:
-#    build:
+  demo-service-dc:
+    image: 9846a1498af7
+    ports:
+    - "9000:9000"
+    container_name: demo-service-dc
   ### database service
   postgres:
     image: postgres
     container_name: "postgres"
-    env_file:
-      - configuration/environment/postgres.env
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: dbpassword
+      POSTGRES_DB: root
+      POSTGRES_MULTIPLE_DATABASES: register:registeruser
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready" ]
       interval: 10s
