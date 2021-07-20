@@ -2,7 +2,7 @@ version: '3.8'
 services:
   ### demo service
   demo-service-dc:
-    image: 9846a1498af7
+    image: <image_hashvalue_of_local_image_here>
     ports:
     - "9000:9000"
     container_name: demo-service-dc
