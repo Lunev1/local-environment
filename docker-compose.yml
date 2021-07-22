@@ -2,7 +2,7 @@ version: '3.8'
 services:
   ### demo service
   demo-service-dc:
-    image: 9846a1498af7
+    image: demo-service-dc
     ports:
     - "9000:9000"
     container_name: demo-service-dc

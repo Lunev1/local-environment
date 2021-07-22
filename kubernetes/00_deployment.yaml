@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      demo: web
+  template:
+    metadata:
+      labels:
+        demo: web
+    spec:
+      containers:
+        - name: demo-service-dc
+          image: 9846a1498af7
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    demo: web
+  ports:
+    - port: 9000
+      targetPort: 9000
+      nodePort: 30001
