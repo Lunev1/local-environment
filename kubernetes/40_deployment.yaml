@@ -23,7 +23,7 @@ metadata:
   name: demo-service-entrypoint
   namespace: default
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     demo: web
   ports:
